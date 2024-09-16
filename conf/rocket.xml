@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>  <!-- 开头指定版本和编码 -->
 <root>  <!--根元素-->
     <log>
-        <log_level>INFO</log_level>
+        <log_level>DEBUG</log_level>
     </log>
 </root>
