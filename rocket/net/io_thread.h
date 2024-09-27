@@ -15,7 +15,7 @@ public:
 
     EventLoop* getEventLoop();
 
-    void start();
+    void start();  //让线程等待，直到信号量+1,启动
 
     void join();
 
@@ -26,7 +26,7 @@ private:
     pthread_t m_thread{0};  //线程句柄
     EventLoop* m_event_loop {NULL}; //当前IO线程的loop对象
     sem_t m_init_semaphore;
-    sem_t m_start_semaphore;
+    sem_t m_start_semaphore;  
 };
 }
 

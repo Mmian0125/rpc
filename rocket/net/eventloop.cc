@@ -53,6 +53,7 @@ EventLoop::EventLoop(){
         ERRORLOG("failed to create event loop, epoll_create error, error info[%d]",errno);
         exit(0);
     }
+    
 
     
     initWakeUpFdEvent();

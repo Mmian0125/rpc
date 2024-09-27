@@ -1,4 +1,5 @@
 #include<assert.h>
+#include<pthread.h>
 #include"rocket/net/io_thread.h"
 #include"rocket/common/log.h"
 #include"rocket/common/util.h"
@@ -6,6 +7,9 @@ namespace rocket{
 IOThread::IOThread(){
     int rt=sem_init(&m_init_semaphore,0,0);
     assert(rt == 0);
+
+    rt=sem_init(&m_start_semaphore,0,0);
+    assert(rt==0);
 
     pthread_create(&m_thread,NULL,&IOThread::Main,this);
     //引入信号量，一直wait，指定新线程执行完Main函数的前置
@@ -17,7 +21,7 @@ IOThread::IOThread(){
 IOThread::~IOThread(){
     m_event_loop->stop();
     sem_destroy(&m_init_semaphore);
-
+    sem_destroy(&m_start_semaphore);
     pthread_join(m_thread,NULL);
 
     if(m_event_loop){
@@ -38,7 +42,7 @@ void* IOThread::Main(void *arg){
     sem_post(&thread->m_init_semaphore);
 
     DEBUGLOG("IOThread %d created,wait start semaphore",thread->m_thread_id);
-    
+    //让线程阻塞，直到主动启动
     sem_wait(&thread->m_start_semaphore);
     DEBUGLOG("IOThread %d start loop",thread->m_thread_id);
     thread->m_event_loop->loop();
@@ -51,7 +55,7 @@ void* IOThread::Main(void *arg){
 EventLoop* IOThread::getEventLoop(){
     return m_event_loop;   
 }
-void IOThread::start(){
+void IOThread::start(){  //线程启动
     DEBUGLOG("Now invoke IOThread %d",m_thread_id);
     sem_post(&m_start_semaphore);
 }
