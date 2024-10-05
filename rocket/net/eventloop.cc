@@ -29,10 +29,11 @@ auto it = m_listen_fds.find(event->getFd());  \
     }  \
     int op=EPOLL_CTL_DEL;  \
     epoll_event tmp = event->getEpollEvent();  \
-    int rt = epoll_ctl(m_epoll_fd,op,event->getFd(),&tmp);  \
+    int rt = epoll_ctl(m_epoll_fd,op,event->getFd(),NULL);  \
     if(rt==-1){  \
         ERRORLOG("failed epoll_ctl when add fd, eerrno=%d",errno);  \
     }  \
+    m_listen_fds.erase(event->getFd());  \
     DEBUGLOG("delete event sucess, fd[%d]",event->getFd());  \
 
 namespace rocket{

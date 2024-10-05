@@ -2,10 +2,12 @@
 #define ROCKET_NET_TCP_TCP_BUFFER_H
 
 #include<vector>
+#include<memory>
 
 namespace rocket{
 class TcpBuffer{
 public:
+    typedef std::shared_ptr<TcpBuffer> s_ptr;
     TcpBuffer(int size);
     
     ~TcpBuffer();
@@ -29,12 +31,14 @@ public:
     void moveReadIndex(int size);  //把这一串字节设置为可读
 
     void moveWriteIndex(int size);  //写入字节的下标从新写入的开始
+public:
+std::vector<char> m_buffer;
 private:
     int m_read_index{0};
     int m_write_index{0};
     int m_size{0};
 
-    std::vector<char> m_buffer;
+    
 };
 }
 

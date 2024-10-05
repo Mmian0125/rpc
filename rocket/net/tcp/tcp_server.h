@@ -1,7 +1,9 @@
 #ifndef ROCKET_NET_TCP_SERVER_H
 #define ROCKET_NET_TCP_SERVER_H
 
+#include<set>
 #include"rocket/net/tcp/tcp_acceptor.h"
+#include"rocket/net/tcp/tcp_connection.h"
 #include"rocket/net/tcp/net_addr.h"
 #include"rocket/net/eventloop.h"
 #include"rocket/net/io_thread_group.h"
@@ -27,6 +29,7 @@ private:
     IOThreadGroup* m_io_thread_group{NULL};  //subReactor组
     FdEvent *m_listen_fd_event;
     int m_client_counts{0};  //当前连接的数量
+    std::set<TcpConnection::s_ptr> m_client; 
 };
 
     

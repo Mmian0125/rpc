@@ -18,9 +18,13 @@ public:
     
     ~FdEvent();
 
+    void setNonBlock();
+
     std::function<void()> handler(TriggerEvent event_type);
 
     void listen(TriggerEvent event_type, std::function<void()> callback);
+
+    void cancel(TriggerEvent event_type);  //取消监听
 
     int getFd() const{
         return m_fd;
