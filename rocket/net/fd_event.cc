@@ -46,9 +46,9 @@ void FdEvent::listen(TriggerEvent event_type,std::function<void()> callback){
 
 void FdEvent::cancel(TriggerEvent event_type){
     if(event_type == TriggerEvent::IN_EVENT){
-        m_listen_events.events &= (~EPOLLIN);
+        m_listen_events.events &= (~ EPOLLIN);
     }else{
-        m_listen_events.events &= (~EPOLLOUT);
+        m_listen_events.events &= (~ EPOLLOUT);
     }
 }
 }

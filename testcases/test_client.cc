@@ -10,6 +10,8 @@
 #include<memory>
 #include "rocket/common/log.h"
 #include "rocket/common/config.h"
+#include"rocket/net/tcp/tcp_client.h"
+#include"rocket/net/tcp/net_addr.h"
 void test_connect(){
     //调用connect连接server
     //send一个字符串
@@ -44,10 +46,19 @@ void test_connect(){
     }
     
 }
+void test_tcp_client(){
+    rocket::IPNetAddr::s_ptr addr = std::make_shared<rocket::IPNetAddr>("127.0.0.1",12345);
+    rocket::TcpClient client(addr);
+    client.connect([addr](){
+        DEBUGLOG("connect to [%s] sucess",addr->toString().c_str());
+    });
+}
 int main(){
     rocket::Config::SetGlobalConfig("../conf/rocket.xml");
 
     rocket::Logger::InitGlobalLogger();
 
     test_connect();
+
+    test_tcp_client();
 }

@@ -81,6 +81,7 @@ void EventLoop::addTimerEvent(TimerEvent::s_ptr event){
 }
 
 void EventLoop::loop(){
+    m_is_looping=true;
     while(!m_stop_flag){
         ScopeMutex<Mutex> lock(m_mutex);  //上锁
         std::queue<std::function<void()>> tmp_tasks = m_pending_tasks;  //从m_pending_tasks中取出任务，加锁保护
@@ -196,5 +197,8 @@ EventLoop* EventLoop::GetCurrentEvemtLoop(){
     }
     t_current_eventloop = new EventLoop();
     return t_current_eventloop;
+}
+bool EventLoop::isLooping(){
+    return m_is_looping;
 }
 }

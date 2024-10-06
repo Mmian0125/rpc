@@ -4,14 +4,14 @@
 #include"rocket/net/fd_event_group.h"
 
 namespace rocket{
-TcpConnection::TcpConnection(IOThread* io_thread, int fd, int buffer_size, NetAddr::s_ptr peer_addr) 
-  : m_io_thread(io_thread), m_peer_addr(peer_addr),m_state(NotConnected), m_fd(fd){
+TcpConnection::TcpConnection(EventLoop* event_loop, int fd, int buffer_size, NetAddr::s_ptr peer_addr) 
+  : m_event_loop(event_loop), m_peer_addr(peer_addr),m_state(NotConnected), m_fd(fd){
     m_in_buffer = std::make_shared<TcpBuffer>(buffer_size);
     m_out_buffer = std::make_shared<TcpBuffer>(buffer_size);
     m_fd_event = FdEventGroup::getFdEventGroup()->getFdEvent(fd);
     m_fd_event->setNonBlock();
     m_fd_event->listen(FdEvent::IN_EVENT,std::bind(&TcpConnection::onRead,this));    
-    io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+    m_event_loop->addEpollEvent(m_fd_event);
     
 }
 TcpConnection::~TcpConnection(){
@@ -79,7 +79,7 @@ void TcpConnection::excute(){
     m_out_buffer->writeToBuffer(msg.c_str(),msg.length());
 
     m_fd_event->listen(FdEvent::OUT_EVENT,std::bind(&TcpConnection::onWrite,this));
-    m_io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+    m_event_loop->addEpollEvent(m_fd_event);
 
 }
 void TcpConnection::onWrite(){
@@ -106,12 +106,14 @@ void TcpConnection::onWrite(){
         if(rt==-1 &&errno==EAGAIN){
             //发送缓冲区已满，不能再发送；等下次fd可写时再发送数据即可
             ERRORLOG("write data error,errno=EAGAIN and rt==-1");
+            break;
         }
     }
     if(is_write_all){
         m_fd_event->cancel(FdEvent::OUT_EVENT);
-        m_io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+        m_event_loop->addEpollEvent(m_fd_event);
     }
+    
 }
 
 void TcpConnection::setState(const TcpState state){
@@ -126,7 +128,8 @@ void TcpConnection::clear(){  //处理关闭连接后的清理动作
     }
     m_fd_event->cancel(FdEvent::IN_EVENT);
     m_fd_event->cancel(FdEvent::OUT_EVENT);
-    m_io_thread->getEventLoop()->delteEpollEvent(m_fd_event);
+    m_event_loop->addEpollEvent(m_fd_event);
+    m_event_loop->delteEpollEvent(m_fd_event);
     m_state = Closed;
     
 
@@ -139,5 +142,8 @@ void TcpConnection::shutdown(){
     ::shutdown(m_fd,SHUT_RDWR);  //调用shutdown函数，进行四次挥手，意味服务器不再对fd进行操作
     //发送FIN报文，触发四次挥手的第一个阶段
     //等到对方返回FIN报文，说明四次挥手结束，即当fd发送可读事件，但可读数据为0
+}
+void TcpConnection::setConnectionType(TcpConnectionType type){
+    m_connection_type=type;
 }
 }
