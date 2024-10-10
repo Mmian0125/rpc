@@ -38,10 +38,8 @@ void TcpServer::onAccept(){
     auto re=m_acceptor->accept();
     int client_fd=re.first;
     NetAddr::s_ptr peer_addr = re.second;
-    //FdEvent client_fd_event(client_fd);
+    
     m_client_counts++;
-    //把clientfd添加到任意IO线程中
-    //m_io_thread_group->getIOThread()->getEventLoop()->addEpollEvent();
     IOThread* io_thread=m_io_thread_group->getIOThread();
     TcpConnection::s_ptr connection = std::make_shared<TcpConnection>(io_thread->getEventLoop(),client_fd,128,peer_addr);
     connection->setState(Connected);
