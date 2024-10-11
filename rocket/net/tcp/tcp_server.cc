@@ -24,7 +24,7 @@ void TcpServer::start(){
 void TcpServer::init(){
 
     m_acceptor = std::make_shared<TcpAcceptor>(m_local_addr);
-    m_main_event_loop = EventLoop::GetCurrentEvemtLoop();
+    m_main_event_loop = EventLoop::GetCurrentEventLoop();
     m_io_thread_group = new IOThreadGroup(2);
 
     m_listen_fd_event = new FdEvent(m_acceptor->getListenFd());

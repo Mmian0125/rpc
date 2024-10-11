@@ -17,9 +17,6 @@ int main(){
 
     rocket::Logger::InitGlobalLogger();
 
-    rocket::IPNetAddr addr("127.0.0.1",12346);
-    DEBUGLOG("create addr %s",addr.toString().c_str());
-
     test_tcp_server();
 
 

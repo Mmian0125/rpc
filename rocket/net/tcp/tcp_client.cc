@@ -9,7 +9,7 @@
 namespace rocket {
 
 TcpClient::TcpClient(NetAddr::s_ptr peer_addr) : m_peer_addr(peer_addr) {
-  m_event_loop = EventLoop::GetCurrentEvemtLoop();
+  m_event_loop = EventLoop::GetCurrentEventLoop();
   m_fd = socket(peer_addr->getFamily(), SOCK_STREAM, 0);
 
   if (m_fd < 0) {
@@ -37,7 +37,7 @@ TcpClient::~TcpClient() {
 void TcpClient::connect(std::function<void()> done) {
   int rt = ::connect(m_fd, m_peer_addr->getSockAddr(), m_peer_addr->getSockLen());
   if (rt == 0) {
-    DEBUGLOG("rt ==0,connect [%s] sussess", m_peer_addr->toString().c_str());
+    DEBUGLOG("connect [%s] sussess", m_peer_addr->toString().c_str());
     if (done) {
       done();
     }
@@ -50,7 +50,7 @@ void TcpClient::connect(std::function<void()> done) {
         getsockopt(m_fd, SOL_SOCKET, SO_ERROR, &error, &error_len);
         bool is_connect_succ = false;
         if (error == 0) {
-          DEBUGLOG("error==0,connect [%s] sussess", m_peer_addr->toString().c_str());
+          DEBUGLOG("connect [%s] sussess", m_peer_addr->toString().c_str());
           is_connect_succ = true;
           m_connection->setState(Connected);
  

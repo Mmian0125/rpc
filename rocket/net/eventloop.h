@@ -1,65 +1,75 @@
 #ifndef ROCKET_NET_EVENTLOOP_H
 #define ROCKET_NET_EVENTLOOP_H
 
-#include<pthread.h>
-#include<set>
-#include<functional>
-#include<queue>
-#include"rocket/common/mutex.h"
-#include"rocket/net/wakeup_fd_event.h"
-#include"rocket/net/fd_event.h"
-#include"rocket/net/timer.h"
-namespace rocket{
-class EventLoop{
-public:
-    EventLoop();
-    
-    ~EventLoop();
+#include <pthread.h>
+#include <set>
+#include <functional>
+#include <queue>
+#include "rocket/common/mutex.h"
+#include "rocket/net/fd_event.h"
+#include "rocket/net/wakeup_fd_event.h"
+#include "rocket/net/timer.h"
 
-    void loop();
+namespace rocket {
+class EventLoop {
+ public:
+  EventLoop();
 
-    void wakeup();
+  ~EventLoop();
 
-    void stop();
+  void loop();
 
-    void addEpollEvent(FdEvent* event);
+  void wakeup();
 
-    void delteEpollEvent(FdEvent* event);
+  void stop();
 
-    bool isInLoopThread();
+  void addEpollEvent(FdEvent* event);
 
-    void addTask(std::function<void()> cb, bool is_wake_up = false);
-    
-    void addTimerEvent(TimerEvent::s_ptr event);
+  void deleteEpollEvent(FdEvent* event);
 
-    bool isLooping();
-public:
-    static EventLoop* GetCurrentEvemtLoop();
+  bool isInLoopThread();
 
-private:
-    void dealWakeup();
+  void addTask(std::function<void()> cb, bool is_wake_up = false);
 
-    void initWakeUpFdEvent();
+  void addTimerEvent(TimerEvent::s_ptr event);
 
-    void initTimer();
-private:
-    pid_t m_thread_id {0};
-    int m_epoll_fd {0};
-    int m_wakeup_fd {0};
-    WakeUpFdEvent* m_wakeup_fd_event{NULL};
+  bool isLooping();
 
-    bool m_stop_flag {false};
+ public:
+  static EventLoop* GetCurrentEventLoop();
 
-    std::set<int> m_listen_fds;
 
-    std::queue<std::function<void()>> m_pending_tasks;
+ private:
+  void dealWakeup();
 
-    Mutex m_mutex;
+  void initWakeUpFdEevent();
 
-    Timer* m_timer{NULL};
+  void initTimer();
 
-    bool m_is_looping{false};
+ private:
+  pid_t m_thread_id {0};
+
+  int m_epoll_fd {0};
+
+  int m_wakeup_fd {0};
+
+  WakeUpFdEvent* m_wakeup_fd_event {NULL};
+
+  bool m_stop_flag {false};
+
+  std::set<int> m_listen_fds;
+
+  std::queue<std::function<void()>> m_pending_tasks;
+  
+  Mutex m_mutex;
+
+  Timer* m_timer {NULL};
+
+  bool m_is_looping {false};
+
 };
+
 }
+
 
 #endif

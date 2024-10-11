@@ -1,0 +1,490 @@
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:39.895] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:39.895] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:39.896] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:39.895] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:39.896] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:39.899] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 0 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:39.895] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:39.896] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:39.899] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 0 bytes from addr[127.0.0.1:48224], client fd[13]
+[INFO]  [24-10-11 21:11:39.900] [123838:123839] [rocket/net/tcp/tcp_connection.cc:73]   peer closed, peer addr [127.0.0.1:48224], clientfd [13]
+[DEBUG] [24-10-11 21:11:34.972] [123838:123838] [testcases/test_tcp.cc:8]       create addr 127.0.0.1:12346
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:95]    wakeup fd = 5
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[5]
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/timer.cc:12]        timer fd=6
+[INFO]  [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.975] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[6]
+[INFO]  [24-10-11 21:11:34.976] [123838:123838] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123838
+[INFO]  [24-10-11 21:11:34.976] [123838:123839] [rocket/net/eventloop.cc:95]    wakeup fd = 8
+[INFO]  [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.977] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[8]
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/timer.cc:12]        timer fd=9
+[INFO]  [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.978] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[9]
+[INFO]  [24-10-11 21:11:34.979] [123838:123839] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123839
+[DEBUG] [24-10-11 21:11:34.980] [123838:123839] [rocket/net/io_thread.cc:44]    IOThread 123839 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.980] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.981] [123838:123840] [rocket/net/eventloop.cc:95]    wakeup fd = 11
+[INFO]  [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.982] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[11]
+[DEBUG] [24-10-11 21:11:34.985] [123838:123840] [rocket/net/timer.cc:12]        timer fd=12
+[INFO]  [24-10-11 21:11:34.985] [123838:123840] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:179]   add event success, fd[12]
+[INFO]  [24-10-11 21:11:34.986] [123838:123840] [rocket/net/eventloop.cc:63]    succ create event loop in thread 123840
+[DEBUG] [24-10-11 21:11:34.987] [123838:123840] [rocket/net/io_thread.cc:44]    IOThread 123840 created,wait start semaphore
+[DEBUG] [24-10-11 21:11:34.987] [123838:123838] [rocket/net/io_thread.cc:18]    IOThread &d create sucess
+[INFO]  [24-10-11 21:11:34.990] [123838:123838] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:35.101] [123838:123838] [rocket/net/eventloop.cc:179]   add event success, fd[3]
+[INFO]  [24-10-11 21:11:35.103] [123838:123838] [rocket/net/tcp/tcp_server.cc:9]        rocket TcpServer listen sucess on [127.0.0.1:12346]
+[DEBUG] [24-10-11 21:11:35.104] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123839
+[DEBUG] [24-10-11 21:11:35.105] [123838:123838] [rocket/net/io_thread.cc:59]    Now invoke IOThread 123840
+[DEBUG] [24-10-11 21:11:35.105] [123838:123839] [rocket/net/io_thread.cc:47]    IOThread 123839 start loop
+[DEBUG] [24-10-11 21:11:35.107] [123838:123840] [rocket/net/io_thread.cc:47]    IOThread 123840 start loop
+[DEBUG] [24-10-11 21:11:38.619] [123838:123838] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.620] [123838:123838] [rocket/net/eventloop.cc:150]   fd 3 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.621] [123838:123838] [rocket/net/tcp/tcp_acceptpr.cc:54]     A client have accepted succ, peer addr [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.622] [123838:123838] [rocket/net/eventloop.cc:165]   WAKE UP
+[DEBUG] [24-10-11 21:11:38.630] [123838:123838] [rocket/net/wakeup_fd_event.cc:19]      sucess read 8 bytes
+[DEBUG] [24-10-11 21:11:38.634] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.643] [123838:123839] [rocket/net/eventloop.cc:150]   fd 8 trigger EPOLLIN event
+[INFO]  [24-10-11 21:11:38.650] [123838:123839] [rocket/net/eventloop.cc:182]   epoll_event.events = 1
+[INFO]  [24-10-11 21:11:38.653] [123838:123838] [rocket/net/tcp/tcp_server.cc:47]       TcpServer sucess get client, fd=13
+[DEBUG] [24-10-11 21:11:38.653] [123838:123839] [rocket/net/eventloop.cc:182]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.659] [123838:123839] [rocket/net/eventloop.cc:103]   read full bytes from wakeup fd[8]
+[DEBUG] [24-10-11 21:11:38.670] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.672] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:38.677] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 47 bytes from addr[127.0.0.1:48224], client fd[13]
+[DEBUG] [24-10-11 21:11:38.678] [123838:123839] [rocket/net/coder/tinypb_coder.cc:39]   get pk_len=47
+[DEBUG] [24-10-11 21:11:38.680] [123838:123839] [rocket/net/coder/tinypb_coder.cc:55]   decode end, read all buffer data
+[INFO]  [24-10-11 21:11:38.681] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 5
+[DEBUG] [24-10-11 21:11:38.683] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:38.721] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:38.725] [123838:123839] [rocket/net/eventloop.cc:154]   fd 13 trigger EPOLLOUT event
+[DEBUG] [24-10-11 21:11:38.727] [123838:123839] [rocket/net/tcp/tcp_connection.cc:148]  no data need to send to client [127.0.0.1:48224]
+[INFO]  [24-10-11 21:11:38.730] [123838:123839] [rocket/net/eventloop.cc:179]   epoll_event.events = 1
+[DEBUG] [24-10-11 21:11:38.734] [123838:123839] [rocket/net/eventloop.cc:179]   add event success, fd[13]
+[DEBUG] [24-10-11 21:11:39.895] [123838:123839] [rocket/net/eventloop.cc:135]   now end epoll_wait, rt = 1
+[DEBUG] [24-10-11 21:11:39.896] [123838:123839] [rocket/net/eventloop.cc:150]   fd 13 trigger EPOLLIN event
+[DEBUG] [24-10-11 21:11:39.899] [123838:123839] [rocket/net/tcp/tcp_connection.cc:53]   success read 0 bytes from addr[127.0.0.1:48224], client fd[13]
+[INFO]  [24-10-11 21:11:39.900] [123838:123839] [rocket/net/tcp/tcp_connection.cc:73]   peer closed, peer addr [127.0.0.1:48224], clientfd [13]
+[DEBUG] [24-10-11 21:11:39.910] [123838:123839] [rocket/net/eventloop.cc:191]   delete event success, fd[13]
+^C
